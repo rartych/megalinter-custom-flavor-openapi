@@ -1,0 +1,9 @@
+---
+# MegaLinter Custom Flavor configuration
+# If you update it manually, run `npx mega-linter-runner --custom-flavor-setup` to propagate updates.
+label: openapi
+linters:
+  - ACTION_ACTIONLINT
+  - GHERKIN_GHERKIN_LINT
+  - OPENAPI_SPECTRAL
+  - YAML_YAMLLINT
