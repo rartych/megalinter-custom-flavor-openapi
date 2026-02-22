@@ -61,6 +61,7 @@ linters:
           ARG NPM_SPECTRAL_CLI_VERSION=6.15.0
       npm:
         - "@stoplight/spectral-cli@${NPM_SPECTRAL_CLI_VERSION}"
+        - "@stoplight/spectral-owasp-ruleset@^2.0"
     supported_platforms:
       platform:
         - linux/amd64

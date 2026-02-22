@@ -126,7 +126,8 @@ ENV NODE_OPTIONS="--max-old-space-size=8192" \
 #NPM__START
 WORKDIR /node-deps
 RUN npm --no-cache install --ignore-scripts --omit=dev \
-                @stoplight/spectral-cli@${NPM_SPECTRAL_CLI_VERSION} && \
+                @stoplight/spectral-cli@${NPM_SPECTRAL_CLI_VERSION} \
+                @stoplight/spectral-owasp-ruleset@^2.0 && \
     echo "Cleaning npm cache…" \
     && (npm cache clean --force || true) \
     && echo "Changing owner of node_modules files…" \
