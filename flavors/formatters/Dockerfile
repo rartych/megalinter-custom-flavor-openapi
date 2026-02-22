@@ -32,7 +32,7 @@ FROM alpine/terragrunt:${TERRAFORM_TERRAGRUNT_VERSION} AS terragrunt
 ##################
 FROM ghcr.io/astral-sh/uv:0.10.3 AS uv
 FROM python:3.13-alpine3.23 AS build-ml-core
-RUN python -m pip install --no-cache-dir "wheel>=0.46.2" "setuptools>=75.8.0" \
+RUN python -m pip install --no-cache-dir "wheel>=0.46.2" "setuptools=81.0.0" \
     && rm -rf /usr/local/lib/python3.13/site-packages/setuptools/_vendor/wheel*
 WORKDIR /
 COPY --from=uv /uv /uvx /bin/
@@ -51,7 +51,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # Get base image #
 ##################
 FROM python:3.13-alpine3.23
-RUN python -m pip install --no-cache-dir "wheel>=0.46.2" "setuptools>=75.8.0" \
+RUN python -m pip install --no-cache-dir "wheel>=0.46.2" "setuptools=81.0.0" \
     && rm -rf /usr/local/lib/python3.13/site-packages/setuptools/_vendor/wheel*
 
 #############################################################################################
